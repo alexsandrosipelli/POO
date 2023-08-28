@@ -1,0 +1,5 @@
+pib da regiao sul = $$$$
+pib da regiao suldeste = $$$$
+pib da regiao nordeste = $$$$
+pib da regiao norte = $$$$
+pib da regiao Centro-Oeste = $$$$
