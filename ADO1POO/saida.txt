@@ -1,5 +1,42 @@
-pib da regiao sul = $$$$
-pib da regiao suldeste = $$$$
-pib da regiao nordeste = $$$$
-pib da regiao norte = $$$$
-pib da regiao Centro-Oeste = $$$$
+PIB DA REGIAO NORTE : 
+ParÃ¡
+Amazonas
+PiauÃ­
+Tocantins
+AmapÃ¡
+Acre
+Roraima
+O pib dessa regiao foi de 218.5 E o porcentual foi de : 5,29
+
+PIB DA REGIAO NORDESTE : 
+Bahia
+Pernambuco
+CearÃ¡
+MaranhÃ£o
+Mato Grosso do Sul
+ParaÃ­ba
+Alagoas
+RondÃ´nia
+Sergipe
+O pib dessa regiao foi de 567.0 E o porcentual foi de : 13,72
+
+PIB DA REGIAO SULDESTE : 
+SÃ£o Paulo
+Rio de Janeiro
+Minas Gerais
+EspÃ­rito Santo
+O pib dessa regiao foi de 2294.0 E o porcentual foi de : 55,51
+
+PIB DA REGIAO SUL: 
+Rio Grande do Sul
+ParanÃ¡
+Santa Catarina
+O pib dessa regiao foi de 671.0 E o porcentual foi de : 16,24
+
+PIB DA REGIAO CENTRO OESTE : 
+Distrito Federal
+GoiÃ¡s
+Mato Grosso
+Rio Grande do Norte
+O pib dessa regiao foi de 382.0 E o porcentual foi de : 9,24
+
