@@ -9,15 +9,14 @@ package com.mycompany.ado1poo;
  * @author alexs
  */
 import java.io.*;
-import java.text.DecimalFormat;
 
 public class lab1 {
 
     public static void main(String[] args) {
 
         // nome do arquivo
-        String nomeDoArquivo1 = "C:\\Users\\alexs\\OneDrive\\Documentos\\NetBeansProjects\\ADO1POO\\src\\main\\java\\com\\mycompany\\ado1poo\\pib.txt";
-//      String nomeDoArquivo2 = "regioes.txt";
+        String nomeDoArquivo1 = "pib.txt";
+        String nomeDoArquivo2 = "regioes.txt";
 
         // linha temporaria
         String linha = null;
@@ -56,8 +55,22 @@ public class lab1 {
             System.out.println("Arquivo inexistente: '" + nomeDoArquivo1 + "'");
         } catch (IOException ex) {
             System.out.println("Erro lendo o arquivo '" + nomeDoArquivo1 + "'");
-        }
+        }s
+        try {
+            FileReader fileReader = new FileReader(nomeDoArquivo2);
 
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            // loop por cada linha do arquivo
+            while ((linha = bufferedReader.readLine()) != null) {
+            }
+            // feche o arquivo
+            bufferedReader.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("Arquivo inexistente: '" + nomeDoArquivo2 + "'");
+        } catch (IOException ex) {
+            System.out.println("Erro lendo o arquivo '" + nomeDoArquivo2 + "'");
+        }
 
         /*      ------------------------------------- */
  /*      Exemplo de escrita em arquivo         */
