@@ -31,37 +31,28 @@ public class Vertice<TIPO> {
         this.arestasSaida = new ArrayList<Aresta<TIPO>>();
         /* inicializa o vértice com o valor fornecido e cria listas vazias para arestasEntrada e arestasSaida.*/
     }
-
     public TIPO getDado() {
         return dado;  // Retorna o dado associado a um vértice
     }
-
     public void setDado(TIPO dado) {
         this.dado = dado;  // Define um novo valor para o dado associado a um vértice
     }
-
     public void adicionarArestaEntrada(Aresta<TIPO> aresta) {
         this.arestasEntrada.add(aresta);  // Adiciona uma nova aresta de entrada à lista de arestas de entrada do vértice
     }
-
     public void adicionarArestaSaida(Aresta<TIPO> aresta) {
         this.arestasSaida.add(aresta);  // Adiciona uma nova aresta de saída à lista de arestas de saída do vértice
     }
-
     public ArrayList<Aresta<TIPO>> getArestasEntrada() {
         return arestasEntrada;  // Retorna a lista de arestas de entrada associadas ao vértice
     }
-
     public void setArestasEntrada(ArrayList<Aresta<TIPO>> arestasEntrada) {
         this.arestasEntrada = arestasEntrada;  // Define a lista de arestas de entrada para o vértice
     }
-
     public ArrayList<Aresta<TIPO>> getArestasSaida() {
         return arestasSaida;  // Retorna a lista de arestas de saída associadas ao vértice
     }
-
     public void setArestasSaida(ArrayList<Aresta<TIPO>> arestasSaida) {
         this.arestasSaida = arestasSaida;  // Define a lista de arestas de saída para o vértice
     }
-
 }

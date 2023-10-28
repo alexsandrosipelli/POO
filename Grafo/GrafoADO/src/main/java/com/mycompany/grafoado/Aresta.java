@@ -9,37 +9,30 @@ package com.mycompany.grafoado;
  * @author alexs
  */
 public class Aresta<TIPO> {
-    private Double peso;  // Peso da aresta
-    private Vertice<TIPO> inicio;  // Vértice de início da aresta
-    private Vertice<TIPO> fim;  // Vértice final da aresta
-
+    private Double peso;
+    private Vertice<TIPO> inicio;
+    private Vertice<TIPO> fim;
     public Aresta(Double peso, Vertice<TIPO> inicio, Vertice<TIPO> fim){
-        this.peso = peso;   
+        this.peso = peso;
         this.inicio = inicio;
         this.fim = fim;
     }
-
     public Double getPeso() {
-        return peso;  // Retorna o peso da aresta
+        return peso;
     }
-
     public void setPeso(Double peso) {
-        this.peso = peso;  // Define um novo peso para a aresta
+        this.peso = peso;
     }
-
     public Vertice<TIPO> getInicio() {
-        return inicio;  // Retorna o vértice de início da aresta
+        return inicio;
     }
-
     public void setInicio(Vertice<TIPO> inicio) {
-        this.inicio = inicio;  // Define um novo vértice de início para a aresta
+        this.inicio = inicio;
     }
-
     public Vertice<TIPO> getFim() {
-        return fim;  // Retorna o vértice final da aresta
+        return fim;
     }
-
     public void setFim(Vertice<TIPO> fim) {
-        this.fim = fim;  // Define um novo vértice final para a aresta
+        this.fim = fim;
     }
 }
