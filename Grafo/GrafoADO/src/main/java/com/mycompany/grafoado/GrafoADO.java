@@ -21,15 +21,25 @@ public class GrafoADO {
         Grafo<String> grafo = new Grafo<String>();
         
         grafo.adicionarVertice("esquina A");
+        
         grafo.adicionarVertice("esquina B");
+        
         grafo.adicionarVertice("esquina C");
+        
         grafo.adicionarVertice("esquina D");
+        
         grafo.adicionarVertice("esquina E");
+        
         grafo.adicionarVertice("esquina F");
+        
         grafo.adicionarVertice("esquina G");
+        
         grafo.adicionarVertice("esquina H");
+        
         grafo.adicionarVertice("esquina I");
+        
         grafo.adicionarVertice("esquina J");
+        
         grafo.adicionarVertice("esquina K");
         
         grafo.adicionarAresta(10.0,"esquina A", "esquina C");
@@ -47,8 +57,10 @@ public class GrafoADO {
         grafo.adicionarAresta(5.0, "esquina J", "esquina K");
         grafo.adicionarAresta(7.0, "esquina K", "esquina B");
         grafo.adicionarAresta(7.0, "esquina B", "esquina A");
+        
         grafo.BuscaEmLargura();
-         Map<String, List<String>> graf = new HashMap<>();
+        
+       /*  Map<String, List<String>> graf = new HashMap<>();
         graf.put("esquina A", new ArrayList<>(Arrays.asList("esquina C", "esquina B")));
         graf.put("esquina B", new ArrayList<>(Arrays.asList("esquina A", "esquina K")));
         graf.put("esquina C", new ArrayList<>(Arrays.asList("esquina A", "esquina E", "esquina D")));
@@ -69,7 +81,7 @@ public class GrafoADO {
                 System.out.print(conexao + " ");
             }
             System.out.println();
-        }
+        }*/
     }
     
 }
