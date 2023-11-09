@@ -60,8 +60,7 @@ public class Grafo<TIPO> {
         System.out.println(atual.getDado());// imprimir esquina A
 
         fila.add(atual);//  apos visitalo add na fila de visistados
-
-        double distancia=0;
+        
 
         while (fila.size() > 0) {// durante o cod, vai add o proximo e quando nao tiver mais proximo a fila ficará zero e o loop irá acabar
 
@@ -82,10 +81,6 @@ public class Grafo<TIPO> {
             }//fim do FOR
 
             fila.remove(0);// apos percorrer todo vertice "esquina A " remove ele e o "esquina C" passará a ser o index 0 e assim mantendo o loop while ate chegar no ultimo.
-
-            distancia = aresta.getPeso();
-            
-
         }
     }
 
