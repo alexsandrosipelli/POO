@@ -1,4 +1,9 @@
 com\mycompany\grafoado\Aresta.class
-com\mycompany\grafoado\Vertice.class
+com\mycompany\grafoado\ViewGrafo$1.class
 com\mycompany\grafoado\GrafoADO.class
 com\mycompany\grafoado\Grafo.class
+com\mycompany\grafoado\Vertice.class
+com\mycompany\grafoado\ViewGrafo$2.class
+com\mycompany\grafoado\ViewGrafo$Edge.class
+com\mycompany\grafoado\ViewGrafo$3.class
+com\mycompany\grafoado\ViewGrafo.class
