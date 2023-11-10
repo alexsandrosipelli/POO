@@ -10,8 +10,6 @@ package com.mycompany.grafoado;
  */
 import java.awt.BorderLayout;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class Grafo<TIPO> {
 
@@ -49,41 +47,34 @@ public class Grafo<TIPO> {
         return vertice;
     }
 
-   public void BuscaEmLargura() {
-        // Lista de vértices já visitados
-        ArrayList<Vertice<TIPO>> marcados = new ArrayList<Vertice<TIPO>>();
-        
-        // Fila para controlar a ordem de visitação
-        Queue<Vertice<TIPO>> fila = new LinkedList<Vertice<TIPO>>();
+    public void BuscaEmLargura() {
+    ArrayList<Vertice<TIPO>> marcados = new ArrayList<>(); // visitados
+    ArrayList<Vertice<TIPO>> fila = new ArrayList<>(); // após serem visitados, vão para fila
 
-        // Inicializando a busca a partir do primeiro vértice no grafo
-        Vertice<TIPO> inicio = this.vertices.get(0);
-        marcados.add(inicio);
-        fila.add(inicio);
+    Vertice<TIPO> atual = this.vertices.get(0); // "esquina A"
+    marcados.add(atual); // adiciona "esquina A" aos marcados
 
-        System.out.println("Ponto de Partida: " + inicio.getDado());
+    System.out.println("Início da Busca em Largura a partir de: " + atual.getDado());
 
-        while (!fila.isEmpty()) {
-            // Removendo o vértice atual da fila
-            Vertice<TIPO> visitado = fila.poll();
+    fila.add(atual); // após visitá-lo, adiciona à fila
 
-            // Iterando sobre as arestas do vértice atual
-            for (Aresta<TIPO> aresta : visitado.getArestasSaida()) {
-                Vertice<TIPO> proximo = aresta.getFim();
+    while (!fila.isEmpty()) {
+        Vertice<TIPO> visitado = fila.get(0); // primeiro vértice na fila
 
-                if (!marcados.contains(proximo)) {
-                    // Marcando o vértice como visitado
-                    marcados.add(proximo);
+        for (int i = 0; i < visitado.getArestasSaida().size(); i++) {
+            Vertice<TIPO> proximo = visitado.getArestasSaida().get(i).getFim(); // vértice conectado
 
-                    // Imprimindo o vértice visitado
-                    System.out.println("Conexão: " + visitado.getDado() + " -> " + proximo.getDado());
+            if (!marcados.contains(proximo)) {
+                marcados.add(proximo); // adiciona o próximo aos visitados
 
-                    // Adicionando o vértice à fila para visitar seus vizinhos
-                    fila.add(proximo);
-                }
+                // Imprime a conexão e marcação
+                System.out.println("Conexão: " + visitado.getDado() + " -> " + proximo.getDado());
+
+                fila.add(proximo); // adiciona o próximo à fila
             }
         }
-    }
 
+        fila.remove(0); // remove o vértice atual da fila após processamento
+    }}
 
 }

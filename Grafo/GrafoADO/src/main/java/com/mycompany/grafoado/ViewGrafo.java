@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ViewGrafo extends JFrame {
+
     private final Map<String, Point> vertices = new HashMap<>();
     private final List<Edge> arestas = new ArrayList<>();
 
@@ -31,18 +32,27 @@ public class ViewGrafo extends JFrame {
         //Adiciona os botões à tela
         JButton btnAdicionarVertice = new JButton("Adicionar Vértice");
         JButton btnAdicionarAresta = new JButton("Adicionar Aresta");
-        
+
         //Adiciona os eventos ao botão vertice
         btnAdicionarVertice.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String rotulo = JOptionPane.showInputDialog("Digite o rótulo do vértice:");
+                String rotulo = JOptionPane.showInputDialog(
+                        null,
+                        "Digite o rótulo do vértice:",
+                        "Adicionar Vértice",
+                        JOptionPane.PLAIN_MESSAGE
+                );
+
+                // Define a cor do texto para preto
+                UIManager.put("OptionPane.messageForeground", Color.BLACK);
+
                 vertices.put(rotulo, MouseInfo.getPointerInfo().getLocation());
                 repaint();
             }
         });
 
-            //Adiciona eventos ao botão aresta
+        //Adiciona eventos ao botão aresta
         btnAdicionarAresta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -51,15 +61,15 @@ public class ViewGrafo extends JFrame {
                 adicionaAresta(origem, destino);//Adiciona a aresta do ponto de origem ao ponto final
             }
         });
-        
+
         // Adiciona um vertice quando clica na janela
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                
+
             }
         });
-        
+
         // Organiza os botões com o FlowLayout
         setLayout(new FlowLayout());
         add(btnAdicionarVertice);
@@ -67,7 +77,7 @@ public class ViewGrafo extends JFrame {
 
         setVisible(true);
     }
-    
+
     //Método para adicionar arestas
     public void adicionaAresta(String origem, String destino) {
         Point pontoOrigem = vertices.get(origem);//Adiciona a aresta do ponto de origem
@@ -79,7 +89,7 @@ public class ViewGrafo extends JFrame {
             JOptionPane.showMessageDialog(this, "Vértices não encontrados!");
         }
     }
-    
+
     //O metodo paint é responsavel pelas cores, forma e tamanho do itens que aparece na tela
     @Override
     public void paint(Graphics g) {
@@ -99,9 +109,10 @@ public class ViewGrafo extends JFrame {
             g.drawLine(aresta.origem.x, aresta.origem.y, aresta.destino.x, aresta.destino.y);// Define os pontos da aresta
         }
     }
-    
+
     //Metodo que determina os pontos da aresta
     private static class Edge {
+
         private final Point origem;
         private final Point destino;
 
@@ -110,9 +121,5 @@ public class ViewGrafo extends JFrame {
             this.destino = destino;
         }
     }
-       
+
 }
-
-
-
-

@@ -22,8 +22,7 @@ public class Vertice<TIPO> {
     private ArrayList<Aresta<TIPO>> arestasEntrada;
     /* Este é um campo que armazena todas as arestas que entram neste vértice.*/
     private ArrayList<Aresta<TIPO>> arestasSaida;
-
-    /*Este é um campo que armazena todas as arestas que saem deste vértice.*/
+     /*Este é um campo que armazena todas as arestas que saem deste vértice.*/
 
     public Vertice(TIPO valor) {
         this.dado = valor;
