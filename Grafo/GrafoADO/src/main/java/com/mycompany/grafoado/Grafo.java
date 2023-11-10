@@ -10,6 +10,8 @@ package com.mycompany.grafoado;
  */
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Grafo<TIPO> {
 
@@ -47,41 +49,41 @@ public class Grafo<TIPO> {
         return vertice;
     }
 
-    public void BuscaEmLargura() {
-        ArrayList<Vertice<TIPO>> marcados = new ArrayList<Vertice<TIPO>>();//visistados
-
-        ArrayList<Vertice<TIPO>> fila = new ArrayList<Vertice<TIPO>>();//apos serem visitados vao para fila
-
-        Vertice<TIPO> atual = this.vertices.get(0);//"esquina A"
-        Aresta<TIPO> aresta = new Aresta<TIPO>();
-
-        marcados.add(atual);//add "esquina A"
-
-        System.out.println(atual.getDado());// imprimir esquina A
-
-        fila.add(atual);//  apos visitalo add na fila de visistados
+   public void BuscaEmLargura() {
+        // Lista de vértices já visitados
+        ArrayList<Vertice<TIPO>> marcados = new ArrayList<Vertice<TIPO>>();
         
+        // Fila para controlar a ordem de visitação
+        Queue<Vertice<TIPO>> fila = new LinkedList<Vertice<TIPO>>();
 
-        while (fila.size() > 0) {// durante o cod, vai add o proximo e quando nao tiver mais proximo a fila ficará zero e o loop irá acabar
+        // Inicializando a busca a partir do primeiro vértice no grafo
+        Vertice<TIPO> inicio = this.vertices.get(0);
+        marcados.add(inicio);
+        fila.add(inicio);
 
-            Vertice<TIPO> visitado = fila.get(0);//"esquina A" no primeiro loop... amazenado em uma istancia da classe Vertice
+        System.out.println("Ponto de Partida: " + inicio.getDado());
 
-            for (int i = 0; i < visitado.getArestasSaida().size(); i++) {// com quantas esquinas vai se conectar a "esquina A"
+        while (!fila.isEmpty()) {
+            // Removendo o vértice atual da fila
+            Vertice<TIPO> visitado = fila.poll();
 
-                Vertice<TIPO> proximo = visitado.getArestasSaida().get(i).getFim();//pegando a esquina que esta sendo conectada e amazenando na instancia da classe vertice "proximo" no caso "esquina C".
+            // Iterando sobre as arestas do vértice atual
+            for (Aresta<TIPO> aresta : visitado.getArestasSaida()) {
+                Vertice<TIPO> proximo = aresta.getFim();
 
-                if (!marcados.contains(proximo)) {//se nao contem na lista de marcado add o proximo, no caso o A "esquina C"
+                if (!marcados.contains(proximo)) {
+                    // Marcando o vértice como visitado
+                    marcados.add(proximo);
 
-                    marcados.add(proximo);// no caso "esquina C"
+                    // Imprimindo o vértice visitado
+                    System.out.println("Conexão: " + visitado.getDado() + " -> " + proximo.getDado());
 
-                    System.out.println(proximo.getDado());// imprimir O proximo nesse caso o "esquina C" 
-
-                    fila.add(proximo);//adicinonando o proximo, a fila ficará com dois index, e apos sair do loop for, irá remover o index 0, no caso "esquina A"
+                    // Adicionando o vértice à fila para visitar seus vizinhos
+                    fila.add(proximo);
                 }
-            }//fim do FOR
-
-            fila.remove(0);// apos percorrer todo vertice "esquina A " remove ele e o "esquina C" passará a ser o index 0 e assim mantendo o loop while ate chegar no ultimo.
+            }
         }
     }
+
 
 }
